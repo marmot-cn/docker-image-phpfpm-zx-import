@@ -261,7 +261,9 @@ RUN set -ex \
     && ln -s /usr/local/instantclient/sqlplus /usr/bin/sqlplus \
     && echo 'instantclient,/usr/local/instantclient' | pecl install oci8 \
     && echo "extension=oci8.so" > /usr/local/etc/php/conf.d/oci8.ini \
-    && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false unzip
+    && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false unzip \
+    && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone
 
 EXPOSE 9000
 CMD ["php-fpm"]
