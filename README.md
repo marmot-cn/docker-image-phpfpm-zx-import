@@ -8,6 +8,20 @@
 
 因为`php`的`composer`包`"phpoffice/phpspreadsheet": "1.0.0"`需要使用`gd`和`iconv`库支持, 所以额外编译`gd`库.
 
+## 基本配置项
+
+* 开启`opcache`
+* `post_max_size`设置`post`传输限制
+* `date.timezone`设定时区
+* `memory_limit`设定内存限制
+* `file_uploads = off`上传文件功能关闭
+* `upload_tmp_dir`虽然上传文件功能关闭, 还是把上传文件路径指向到别的位置
+* `display_errors = off`不输出错误
+* `error_reporting = E_ALL`错误级别,设定到`notice`
+* `log_errors = on`开启记录错误日志, 因为默认配置文件会把错误输出指向到标准错误输出
+* `expose_php = off`不返回`php版本号`
+* `html_errors = off`关闭错误引导链接
+
 ## 基本编译配置项
 
 * `--disable-session`禁用`session`

@@ -263,7 +263,27 @@ RUN set -ex \
     && echo "extension=oci8.so" > /usr/local/etc/php/conf.d/oci8.ini \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false unzip \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-    && echo "Asia/Shanghai" > /etc/timezone
+    && echo "Asia/Shanghai" > /etc/timezone \
+    && set -ex \
+    && { \
+        echo 'zend_extension=opcache.so'; \
+        echo 'opcache.enable=1'; \
+        echo 'opcache.enable_cli=1'; \
+        echo 'opcache.huge_code_pages=1'; \
+    } | tee /usr/local/etc/php/conf.d/opcache.ini \
+    && { \
+    	echo 'post_max_size = 5M'; \
+	echo "date.timezone = 'PRC'"; \
+	echo "memory_limit = '256M'"; \
+	echo 'upload_tmp_dir = /var/www/html/cache/tmp'; \
+	echo 'file_uploads = off'; \
+	echo 'display_errors = off'; \
+	echo 'html_errors = off'; \
+	echo 'error_reporting = E_ALL'; \
+	echo 'log_errors = on'; \
+	echo 'expose_php = off'; \
+    } | tee /usr/local/etc/php/conf.d/core.ini
+
 
 EXPOSE 9000
 CMD ["php-fpm"]
