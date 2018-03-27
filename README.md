@@ -13,7 +13,7 @@
 * 开启`opcache`
 * `post_max_size`设置`post`传输限制
 * `date.timezone`设定时区
-* `memory_limit`设定内存限制
+* `memory_limit`设定内存限制, 这里限制为`512MB`, 限定用户导入`excel`为`5MB`进行测试.
 * `file_uploads = off`上传文件功能关闭
 * `upload_tmp_dir`虽然上传文件功能关闭, 还是把上传文件路径指向到别的位置
 * `display_errors = off`不输出错误

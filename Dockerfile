@@ -274,7 +274,7 @@ RUN set -ex \
     && { \
     	echo 'post_max_size = 5M'; \
 	echo "date.timezone = 'PRC'"; \
-	echo "memory_limit = '256M'"; \
+	echo "memory_limit = '512M'"; \
 	echo 'upload_tmp_dir = /var/www/html/cache/tmp'; \
 	echo 'file_uploads = off'; \
 	echo 'display_errors = off'; \
