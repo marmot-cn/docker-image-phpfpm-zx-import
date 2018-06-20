@@ -31,6 +31,7 @@
 * `--enable-sysvsem`
 * `--enable-sysvshm`
 * `--enable-bcmath` rabbitmq 需要
+* `--enable-soap` 接口提供方使用`soap`, 配套支持选项
 
 ## 扩展安装
 

@@ -137,6 +137,7 @@ RUN set -xe \
                 --enable-zip \
                 --enable-bcmath \
                 --with-pdo-mysql=mysqlnd \
+                --enable-soap \
                 --enable-pcntl \
                 --enable-sysvmsg \
                 --enable-sysvsem \
