@@ -53,7 +53,7 @@ ENV PHP_SHA256="ec9ca348dd51f19a84dc5d33acfff1fba1f977300604bdac08ed46ae2c281e8c
 
 RUN set -xe; \
 	\
-	fetchDeps=' \
+	fetchDeps='\
 		wget \
 	'; \
 	if ! command -v gpg > /dev/null; then \
@@ -165,7 +165,6 @@ RUN set -xe \
 
 COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
 COPY marmot.so /usr/local/lib/php/extensions/no-debug-non-zts-20160303/
-COPY confd composer /usr/local/bin/
 
 ADD oracle/instantclient-basic-linux.x64-11.2.0.4.0.zip /tmp/instantclient-basic-linux.x64-11.2.0.4.0.zip
 ADD oracle/instantclient-sdk-linux.x64-11.2.0.4.0.zip /tmp/instantclient-sdk-linux.x64-11.2.0.4.0.zip
