@@ -260,7 +260,7 @@ RUN set -ex \
     && ln -s /usr/local/instantclient_11_2 /usr/local/instantclient \
     && ln -s /usr/local/instantclient/libclntsh.so.11.1 /usr/local/instantclient/libclntsh.so \
     && ln -s /usr/local/instantclient/sqlplus /usr/bin/sqlplus \
-    && echo 'instantclient,/usr/local/instantclient' | pecl install oci8 \
+    && echo 'instantclient,/usr/local/instantclient' | pecl install oci8-2.2.0 \
     && echo "extension=oci8.so" > /usr/local/etc/php/conf.d/oci8.ini \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false unzip \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
